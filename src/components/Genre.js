@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import fetchFromSpotify, { request } from '../services/api'
 
+
+
+
+
 const AUTH_ENDPOINT =
   'https://nuod0t2zoe.execute-api.us-east-2.amazonaws.com/FT-Classroom/spotify-auth-token'
 const TOKEN_KEY = 'whos-who-access-token'
 
-const Home = () => {
+const Genre = () => {
   const [genres, setGenres] = useState([])
   const [selectedGenre, setSelectedGenre] = useState('')
   const [authLoading, setAuthLoading] = useState(false)
@@ -68,8 +72,9 @@ const Home = () => {
           </option>
         ))}
       </select>
+
     </div>
   )
 }
 
-export default Home
+export default Genre;

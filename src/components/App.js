@@ -1,11 +1,13 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 
-import Home from './Home'
+
+import Home from '../screens/Home'
 
 const App = () => (
   <div>
     <Route exact path='/' component={Home} />
+
   </div>
 )
 
