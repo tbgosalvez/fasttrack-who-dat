@@ -7,11 +7,11 @@ const ArtistChoices = props => {
 	const artists = ["Katy Perry", "Metallica", "NeYo"];
 
 	return (
-		<Card className={styles.default}>
+		<Card className={`${styles.default}`}>
 			<div>Artist Box</div>
 
 			{/* change to props */}
-			<ul>
+			<ul className="flex_row">
 				{artists.map(a => {
 					return(
 						<li key={Math.random()}>

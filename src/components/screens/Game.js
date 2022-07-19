@@ -24,7 +24,8 @@ const Game = props => {
 	return (
 		<>
 			{showModal && <Modal title="You are..." message="Correct!" onClick={closeModalHandler} />}
-			<Card className={styles.default}>
+			<Card className={`${styles.default} flex_column`}>
+				<h2>Round {roundCount}</h2>
 				<ArtistChoices />
 				<SongChoices />
 				<Button onClick={showModalHandler}>That Dude/Lady/Band</Button>

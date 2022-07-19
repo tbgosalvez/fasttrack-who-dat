@@ -6,10 +6,10 @@ import styles from "./Home.module.css";
 
 const Home = props => {
 	return (
-		<div className={styles.default}>
+		<div className={`${styles.default} flex_column`}>
 			<Config />
 			<Link to="/game">
-				<Button>Start!</Button>
+				<Button>Play!</Button>
 			</Link>
 		</div>
 	);

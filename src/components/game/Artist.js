@@ -1,12 +1,13 @@
 
 import React from 'react';
+import Card from '../UI/Card';
 import styles from "./Artist.module.css";
 
 const Artist = props => {
 	return (
-		<div>
+		<Card className={styles.default}>
 			{props.name}
-		</div>
+		</Card>
 	);
 }
 

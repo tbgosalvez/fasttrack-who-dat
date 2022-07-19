@@ -1,28 +1,26 @@
-
-import React from 'react';
-import Card from '../UI/Card';
-import Song from './Song';
+import React from "react";
+import Card from "../UI/Card";
+import Song from "./Song";
 import styles from "./SongChoices.module.css";
 
 const SongChoices = props => {
-	const songs = ['Double Rainbow', 'Dark Horse']
+	const songs = ["song 1", "song 2"];
 	return (
 		<Card className={styles.default}>
-			<div>
+			<div>Song Box</div>
 
-			Song Box
-			</div>
-			<ul>
+			{/* change to props */}
+			<ul className="flex_column">
 				{songs.map(s => {
 					return (
 						<li key={Math.random()}>
 							<Song title={s} />
 						</li>
-					)
+					);
 				})}
 			</ul>
-		</Card >
+		</Card>
 	);
-}
+};
 
 export default SongChoices;
