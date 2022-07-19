@@ -38,3 +38,7 @@ ul {
 li {
 	list-style: none;
 }
+
+.selected {
+	border: 4px dashed #00c800;
+}
