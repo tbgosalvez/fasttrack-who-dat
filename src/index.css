@@ -1,0 +1,13 @@
+* {
+	--bgcolor-window: #444;
+	--bgcolor-main: #aaa;
+	--bgcolor-artist-choices: #ccc;
+	--bgcolor-artist: #eee;
+	--bgcolor-song-choices: #ccc;
+	--bgcolor-song: #eee;
+
+}
+
+body {
+	background-color: var(--bgcolor-window);
+}

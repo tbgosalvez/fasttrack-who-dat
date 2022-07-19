@@ -1,0 +1,16 @@
+.default {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.option_label {
+	font-weight: 500;
+}
+
+.set_option {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	/* gap: 0.5rem; */
+}
