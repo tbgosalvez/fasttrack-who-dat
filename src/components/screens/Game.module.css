@@ -1,0 +1,5 @@
+.default {
+	background-color: var(--bgcolor-main);
+	justify-content: space-around;
+	gap: 1rem;
+}

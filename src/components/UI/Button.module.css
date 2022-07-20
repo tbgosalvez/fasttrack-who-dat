@@ -1,0 +1,11 @@
+.btn_default {
+  color: #fff;
+  background-color: #009600;
+  border: 2px solid #00c800;
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+
+.btn_default:hover {
+  background-color: #00c800;
+}

@@ -1,0 +1,44 @@
+* {
+	--bgcolor-window: #444;
+	--bgcolor-main: #aaa;
+	--bgcolor-artist-choices: #ccc;
+	--bgcolor-artist: #eee;
+	--bgcolor-song-choices: #ccc;
+	--bgcolor-song: #eee;
+
+}
+
+body {
+	background-color: var(--bgcolor-window);
+}
+
+.centered {
+	margin: 0 auto;
+}
+
+.flex_row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.flex_column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+.selected {
+	border: 4px dashed #00c800;
+}
