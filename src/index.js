@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
+
+import {config_store} from "./state/store";
 
 import App from "./App";
 
@@ -9,8 +11,10 @@ import "./index.css";
 const MOUNT_NODE = document.getElementById("app");
 
 ReactDOM.render(
-	<Router>
-		<App />
-	</Router>,
+	<React.StrictMode>
+		<Provider store={config_store}>
+			<App />
+		</Provider>
+	</React.StrictMode>,
 	MOUNT_NODE
 );
