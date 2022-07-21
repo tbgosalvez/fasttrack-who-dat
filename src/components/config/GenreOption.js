@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import fetchFromSpotify, { request } from "../../services/api";
 
 const AUTH_ENDPOINT = "https://nuod0t2zoe.execute-api.us-east-2.amazonaws.com/FT-Classroom/spotify-auth-token";
 const TOKEN_KEY = "whos-who-access-token";
 
 const GenreOption = props => {
+	const selectedGenre = useSelector(state => state.genre);
+	
 	const [genres, setGenres] = useState([]);
-	const [selectedGenre, setSelectedGenre] = useState("");
 	const [authLoading, setAuthLoading] = useState(false);
 	const [configLoading, setConfigLoading] = useState(false);
 	const [token, setToken] = useState(props.token);
@@ -40,29 +42,26 @@ const GenreOption = props => {
 
 	const loadGenres = async t => {
 		setConfigLoading(true);
-		
-    const response = await fetchFromSpotify({
+
+		const response = await fetchFromSpotify({
 			token: t,
 			endpoint: "recommendations/available-genre-seeds",
 		});
 
 		console.log(response);
-		
-    setGenres(response.genres);
-    props.setToken(t);
+
+		setGenres(response.genres);
+		props.setToken(t);
 		setConfigLoading(false);
 	};
 
-  // bubble up the selected genre
 	const selectGenreHandler = event => {
-    console.log("GenreOption::selectGenreHandler")
-    setSelectedGenre(event.target.value);
-		// props.onSelect(event.target.value);
+		console.log("GenreOption::selectGenreHandler");
+		props.onUpdate(event.target.value);
 	};
 
-	if (authLoading || configLoading) {
+	if (authLoading || configLoading) 
 		return <div>Loading...</div>;
-	}
 
 	return (
 		<div>

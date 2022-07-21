@@ -1,27 +1,27 @@
 import React, { useState } from "react";
+import CONSTANTS from "../../CONSTANTS";
 import styles from "./Option.module.css";
 
 const Option = props => {
-	const [opt, setOpt] = useState(props.default);
 
 	const incHandler = () => {
-		if(opt < props.max)
-			setOpt(opt+1);
+		if(props.option < props.max)
+			props.onUpdate(CONSTANTS.OP_INCREMENT);
 	};
 
 	const decHandler = () => {
-		if (opt > props.default)
-			setOpt(opt-1);
+		if (props.option > props.default)
+			props.onUpdate(CONSTANTS.OP_DECREMENT);
 	};
 
 	return (
 		<div className={styles.default}>
-			<div className={styles.option_label}>{props.option}</div>
+			<div className={styles.option_label}>{props.label}</div>
 			<div className={styles.set_option}>
 				<button className={styles.dec} onClick={decHandler}>
 					-
 				</button>
-				<span className={styles.num_songs}>{opt}</span>
+				<span className={styles.num_songs}>{props.option}</span>
 				<button className={styles.inc} onClick={incHandler}>
 					+
 				</button>
