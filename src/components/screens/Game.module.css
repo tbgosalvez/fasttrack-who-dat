@@ -3,3 +3,10 @@
 	justify-content: space-around;
 	gap: 1rem;
 }
+
+.btn_stop {
+	color: #f00;
+	background-color: #fff;
+	font-size: 3rem;
+	border: 4px solid #000;
+}
