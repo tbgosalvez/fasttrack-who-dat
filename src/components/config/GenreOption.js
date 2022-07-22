@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import fetchFromSpotify, { request } from "../../services/api";
+import Actions from "../../state/actions";
 
 const AUTH_ENDPOINT = "https://nuod0t2zoe.execute-api.us-east-2.amazonaws.com/FT-Classroom/spotify-auth-token";
 const TOKEN_KEY = "whos-who-access-token";
 
 const GenreOption = props => {
 	const selectedGenre = useSelector(state => state.genre);
+	const dispatch = useDispatch();
 	
 	const [genres, setGenres] = useState([]);
 	const [authLoading, setAuthLoading] = useState(false);
@@ -23,6 +25,7 @@ const GenreOption = props => {
 				console.log("Token found in localstorage");
 				setAuthLoading(false);
 				setToken(storedToken.value);
+				dispatch(Actions.set_token(storedToken.value));
 				loadGenres(storedToken.value);
 				return;
 			}
@@ -36,6 +39,7 @@ const GenreOption = props => {
 			localStorage.setItem(TOKEN_KEY, JSON.stringify(newToken));
 			setAuthLoading(false);
 			setToken(newToken.value);
+			dispatch(Actions.set_token(newToken.value));
 			loadGenres(newToken.value);
 		});
 	}, []);

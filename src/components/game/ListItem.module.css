@@ -1,3 +1,13 @@
 .default {
 	background-color: var(--bgcolor-artist-choices);
 }
+
+.img {
+	border-radius: 10px;
+	width: 320px;
+}
+
+.name {
+	font-weight: 700;
+	text-align: center;
+}

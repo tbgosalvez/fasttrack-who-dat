@@ -1,5 +1,14 @@
 .default {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	margin: 0 auto;
 	width: 50vw;
 	height: 50vh;
+}
+
+.msg {
+	font-size: 72px;
+	font-style: italic;
+	text-decoration: underline;
 }

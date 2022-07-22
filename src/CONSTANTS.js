@@ -1,8 +1,10 @@
 export default class CONSTANTS {
+	static FETCH_LIMIT = 20;
+
 	static OP_INCREMENT = "+";
 	static OP_DECREMENT = "-"; // not necessary with current logic but good practice
 
-	// action types -> reducer switch & dispatch actions
+	static SET_TOKEN = "SET_TOKEN";
 	static INCREMENT_SONGS = "INC_SONGS_OPTION";
 	static DECREMENT_SONGS = "DEC_SONGS_OPTION";
 
@@ -10,4 +12,15 @@ export default class CONSTANTS {
 	static DECREMENT_ARTISTS = "DEC_ARTISTS_OPTION";
 
 	static SET_GENRE = "SET_GENRE_OPTION";
+
+	static SET_ARTISTS = "SET_ARTIST_BANK";
+	static SET_ARTIST_CHOICES = "SET_ARTIST_CHOICES";
+	static SET_TRACK_CHOICES = "SET_DISPLAYED_TRACKS";
+	static SET_REAL_ANSWER = "SET_REAL_ANSWER_ARTIST_NAME";
+
+	static SET_USER_ANSWER = "SET_USER_ANSWER";
+	static INC_ROUND = "INC_ROUND";
+	static INC_SCORE = "INC_SCORE";
+
+	static SET_RESULT_MSG = "SET_WIN_OR_LOSE";
 }
