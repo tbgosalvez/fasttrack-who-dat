@@ -1,25 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../UI/Card";
-import styles from "./Config.module.css";
 import GenreOption from "./GenreOption";
 import Option from "./Option";
+
+import styles from "./Config.module.css";
 
 import CONSTANTS from "../../CONSTANTS";
 import Actions from "../../state/actions";
 
 const Config = props => {
-	const num_songs = useSelector(state => state.num_songs);
-	const num_artists = useSelector(state => state.num_artists);
+	const num_songs = useSelector(s => s.config.num_songs);
+	const num_artists = useSelector(s => s.config.num_artists);
 	const dispatch = useDispatch();
-	const [token, setToken] = useState(props.token);
 
-	const setTokenHandler = t => {
-		setToken(t);
-		props.setToken(t);
-	}
-
-	const updateGenreHandler = g => dispatch(Actions.set_genre(g));
 
 	const updateNumSongsHandler = op => {
 		if(op == CONSTANTS.OP_INCREMENT)
@@ -37,7 +31,7 @@ const Config = props => {
 
 	return (
 		<Card className={styles.config_box}>
-			<GenreOption onUpdate={updateGenreHandler} setToken={setTokenHandler} token={token} />
+			<GenreOption />
 			<Option option={num_songs} onUpdate={updateNumSongsHandler} label="# Songs / Round" default={1} max={3} />
 			<Option option={num_artists} onUpdate={updateNumArtistsHandler} label="# Artists / Round" default={2} max={4} />
 		</Card>

@@ -1,3 +1,7 @@
 .default {
-	gap: 2rem;
+	gap: 1rem;
+}
+
+.btn_play {
+	font-size: 36px;
 }

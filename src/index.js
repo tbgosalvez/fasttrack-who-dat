@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
-import {config_store} from "./state/store";
+import {redux_store} from "./state/store";
 
 import App from "./App";
 
@@ -12,7 +12,7 @@ const MOUNT_NODE = document.getElementById("app");
 
 ReactDOM.render(
 	<React.StrictMode>
-		<Provider store={config_store}>
+		<Provider store={redux_store}>
 			<App />
 		</Provider>
 	</React.StrictMode>,
