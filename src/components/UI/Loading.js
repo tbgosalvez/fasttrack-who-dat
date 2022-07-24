@@ -1,9 +1,8 @@
-import React from "react";
-import Card from "./Card";
+import React from 'react';
 import styles from "./Loading.module.css";
 
 const Loading = props => {
-	return <Card className={styles.default}>Loading...</Card>;
-};
+	return <div className={`${styles.loader} centered`}></div>;
+}
 
 export default Loading;
