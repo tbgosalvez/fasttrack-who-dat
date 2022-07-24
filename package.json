@@ -1,13 +1,13 @@
 {
   "name": "whos-who",
-  "version": "2.0.0",
-  "description": "Skeleton for the Spotify Assessment of the FastTrack'D Class",
+  "version": "3.0.0",
+  "description": "Spotify Assessment for the Cook Systems FastTrack'D Class",
   "main": "dist/index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production"
   },
-  "author": "Will Marttala",
+  "author": "Timothy-Brian Gosalvez",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.17.9",
@@ -20,7 +20,6 @@
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
-    "url-loader": "^4.1.1",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.8.1"
@@ -36,7 +35,6 @@
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
     "regenerator-runtime": "^0.13.9",
-    "styled-components": "^5.3.5",
     "whatwg-fetch": "^3.0.0"
   }
 }

@@ -25,7 +25,6 @@ const Game = props => {
 
 	const [showModal, setShowModal] = useState(false);
 	const [modalMsg, setModalMsg] = useState("Correct!");
-	const [roundCount, setRoundCount] = useState(1);
 
 
 	// these -> assigned with each re-render, but don't cause re-renders themselves
@@ -71,11 +70,10 @@ const Game = props => {
 
 	const closeModalHandler = () => {
 		Howler.stop();
-		setRoundCount(roundCount + 1);
 		dispatch(Actions.increment_round);
 		setShowModal(false);
 
-		if (roundCount < 3) {
+		if (game.round < 3) {
 			dispatch(Actions.load_choices_async);
 			history.push("/game");
 		} else {
@@ -97,7 +95,7 @@ const Game = props => {
 		<>
 			{showModal && <Modal title="You are..." message={modalMsg} onClick={closeModalHandler} />}
 			<Card className={`${styles.default} flex_column`}>
-				<h2>Round {roundCount}</h2>
+				<h2>Round {game.round}</h2>
 					<List title="Artist Box" data={artists} direction="row" onClick={selectArtistHandler} />
 					<div className="flex_row">
 			 			<List title="Song Box" data={songs.filter(s => s.src !== null)} onClick={selectSongHandler} />
