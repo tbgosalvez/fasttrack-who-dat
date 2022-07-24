@@ -21,6 +21,8 @@ export default class Actions {
 
 
 	// Synchronous Stuff
+	static set_loading_songs_pending = { type: CONSTANTS.SET_LOADING_SONGS_PENDING };
+
 	static set_token(t) {
 		return {type: CONSTANTS.SET_TOKEN, token: t};
 	}
@@ -135,6 +137,8 @@ const selectArtists_fetchSongs = (dispatch, getState) => {
 
 	if(state.data.artists.length < 1)
 		return;
+
+	dispatch(Actions.set_loading_songs_pending);
 
 	let rand_index = lodash.random(state.config.num_artists,CONSTANTS.FETCH_LIMIT)
 	let rand_start = Math.max(0, rand_index - state.config.num_artists);

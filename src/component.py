@@ -1,4 +1,3 @@
-from ast import arg
 from os import path
 from sys import argv
 
@@ -22,7 +21,7 @@ import styles from "./{param}.module.css";
 
 const {param} = props => {{
 	return (
-		<div>
+		<div className={{styles.default}}>
 			
 		</div>
 	);

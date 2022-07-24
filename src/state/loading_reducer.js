@@ -13,6 +13,8 @@ export default function loading_reducer(
 			return {...state, loading_token: false};
 		case CONSTANTS.SET_LOADED_ARTISTS_SUCCESS:
 			return {...state, loading_artists: false};
+		case CONSTANTS.SET_LOADING_SONGS_PENDING:
+			return {...state, loading_artists: true};
 		case CONSTANTS.SET_LOADED_SONGS_SUCCESS:
 			return {...state, loading_songs: false};
 		case CONSTANTS.SET_LOADED_SONGS_FAIL:
