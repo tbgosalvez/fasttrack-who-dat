@@ -1,7 +1,8 @@
 {
   "name": "whos-who",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Spotify Assessment for the Cook Systems FastTrack'D Class",
+  "homepage": "/who-dat",
   "main": "dist/index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
