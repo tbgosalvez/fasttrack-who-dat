@@ -12,7 +12,7 @@ const Result = props => {
 	const rematchHandler = () => {
 		// reset state here
 
-		history.push("/");
+		history.push("/who-dat");
 	}
 
 	return (
